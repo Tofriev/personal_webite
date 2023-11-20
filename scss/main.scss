@@ -1,0 +1,107 @@
+@import 'config';
+
+body { 
+    height: 100%;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.8em;
+}
+
+#sidebar {
+    position: fixed;
+    left: 0;
+    top: 50%; 
+    transform: translateY(-50%);
+    z-index: 10; 
+}
+
+#sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: left; 
+}
+
+#sidebar ul li {
+    position: relative;
+}
+
+// link to pages
+#sidebar ul li a {
+    display: flex;
+    align-items: center;
+    color: white; 
+    text-decoration: none;
+    padding: 15px 20px; 
+   
+
+    &:hover .nav-text {
+        color: #338BA8;
+        opacity: 1;
+        @include easeOut;
+ 
+    }
+}
+
+#sidebar ul li a.current .nav-text {
+    color: #338BA8;
+    opacity: 1;
+}
+
+#sidebar ul li a .nav-text {
+    display: inline; 
+    opacity: 0.7; 
+    visibility: visible;
+    white-space: nowrap; 
+    font-size: 30px;
+}
+
+
+#start, #about, #experiences, #skills, #hobbys {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 120vh;
+    position: relative;
+
+}
+
+#start::after, #about::after, #experiences::after, #skills::after, #hobbys::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(#fff,0.5);
+    z-index: 1;
+}
+
+
+#start {
+    background-image: url('../img/lake.JPG');
+    
+}
+
+#about {
+    background-image: url('../img/koli.jpeg');
+
+}
+
+#experiences {
+    background-image: url('../img/tree.jpeg');
+    //min-height: 100%;
+
+}
+
+#skills {
+    background-image: url('../img/ferry.jpeg');
+}
+
+#hobbys {
+    background-image: url('../img/fire.jpeg');
+
+}
+
