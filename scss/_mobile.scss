@@ -1,49 +1,17 @@
-@include mediaSm {
-    // Hamburger Menu Icon
-    .hamburger {
-        display: flex;
-        flex-direction: column;
-        cursor: pointer;
-        span {
-            height: 2px;
-            width: 25px;
-            background: white;
-            margin-bottom: 5px;
-            border-radius: 5px;
-            &:last-child {
-                margin-bottom: 0;
-            }
+@include mediaMd {
+    
+    
+    body {
+        .menu-btn {
+            display: block;
+            
         }
-    }
-
-    // Hide the full navigation and show the hamburger icon
-    #sidebar {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 60px; // Adjust as needed
-        background: rgba(0, 0, 0, 0.8); // Semi-transparent background
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-        ul {
+        
+        
+        
+        #sidebar {
             display: none;
-            flex-direction: column;
-            width: 100%;
-            position: absolute;
-            top: 60px; // Adjust to the height of your navbar
-            left: 0;
-            background: rgba(0, 0, 0, 0.9);
         }
-        li {
-            text-align: center;
-            width: 100%;
-        }
-    }
-
-    // When the hamburger menu is active, display the navigation links
-    .is-active #sidebar ul {
-        display: flex;
     }
 }
+

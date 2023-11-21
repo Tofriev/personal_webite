@@ -1,4 +1,6 @@
 @import 'config';
+@import 'mobile';
+@import 'menu';
 
 body { 
     height: 100%;
@@ -11,6 +13,7 @@ body {
 
 #sidebar {
     position: fixed;
+    display: block;
     left: 0;
     top: 50%; 
     transform: translateY(-50%);
