@@ -2,6 +2,14 @@
 @import 'mobile';
 @import 'menu';
 
+header {
+    position: fixed;
+    width: 100%;
+    top: 0; 
+    z-index: 1000; 
+
+  }
+
 body { 
     height: 100%;
     margin: 0;
@@ -9,6 +17,7 @@ body {
     font-size: 20px;
     font-weight: 400;
     line-height: 1.8em;
+   
 }
 
 #sidebar {
@@ -53,6 +62,11 @@ body {
     opacity: 1;
 }
 
+.menu-nav .nav-item a.current .nav-text {
+    color: #338BA8; 
+  }
+
+
 #sidebar ul li a .nav-text {
     display: inline; 
     opacity: 0.7; 
@@ -68,7 +82,7 @@ body {
     background-repeat: no-repeat;
     min-height: 120vh;
     position: relative;
-
+    z-index: 1;
 }
 
 #start::after, #about::after, #experiences::after, #skills::after, #hobbys::after {
@@ -79,7 +93,7 @@ body {
     right: 0;
     bottom: 0;
     background: rgba(#fff,0.5);
-    z-index: 1;
+    z-index: 0;
 }
 
 
@@ -106,5 +120,39 @@ body {
 #hobbys {
     background-image: url('../img/fire.jpeg');
 
+}
+
+
+// start page 
+
+.start-content {
+    display: grid;
+    gap: 30px;
+    grid-template-areas: 
+    'bioimage heading starttext'
+    ;
+    grid-template-columns: 1fr 2fr 3fr;
+    z-index: 1000000;
+
+    .bio-image {
+        grid-area: bioimage;
+        max-width: 100%; 
+        height: auto; 
+        margin: auto;
+        //border-radius: 50%;
+        border: #338BA8 3px solid;
+        
+    }
+
+    .heading {
+        grid-area: heading;
+        text-align: left;
+        // Add any other styling you need for the heading
+    }
+
+    .start-text {
+        grid-area: starttext;
+        // Add any other styling you need for the start text
+    }
 }
 

@@ -84,6 +84,12 @@
 .nav-item:nth-child(4) {
   transition-delay: 0.4s; }
 
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; }
+
 body {
   height: 100%;
   margin: 0;
@@ -124,6 +130,9 @@ body {
   color: #338BA8;
   opacity: 1; }
 
+.menu-nav .nav-item a.current .nav-text {
+  color: #338BA8; }
+
 #sidebar ul li a .nav-text {
   display: inline;
   opacity: 0.7;
@@ -136,7 +145,8 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   min-height: 120vh;
-  position: relative; }
+  position: relative;
+  z-index: 1; }
 
 #start::after, #about::after, #experiences::after, #skills::after, #hobbys::after {
   content: '';
@@ -146,7 +156,7 @@ body {
   right: 0;
   bottom: 0;
   background: rgba(255, 255, 255, 0.5);
-  z-index: 1; }
+  z-index: 0; }
 
 #start {
   background-image: url("../img/lake.JPG"); }
@@ -162,3 +172,21 @@ body {
 
 #hobbys {
   background-image: url("../img/fire.jpeg"); }
+
+.start-content {
+  display: grid;
+  gap: 30px;
+  grid-template-areas: 'bioimage heading starttext';
+  grid-template-columns: 1fr 2fr 3fr;
+  z-index: 1000000; }
+  .start-content .bio-image {
+    grid-area: bioimage;
+    max-width: 100%;
+    height: auto;
+    margin: auto;
+    border: #338BA8 3px solid; }
+  .start-content .heading {
+    grid-area: heading;
+    text-align: left; }
+  .start-content .start-text {
+    grid-area: starttext; }

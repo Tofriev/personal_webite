@@ -1,6 +1,7 @@
 function updateActiveLink() {
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('#sidebar ul li a');
+    const menuButtonLinks = document.querySelectorAll('.menu-nav .nav-item a');
 
     let passedSections = Array.from(sections).map((section, index) => {
         return {
@@ -11,7 +12,16 @@ function updateActiveLink() {
 
     let currentSectionId = passedSections.length > 0 ? passedSections[passedSections.length - 1].id : 'start';
 
+    // update sidebar
     navLinks.forEach(link => {
+        link.classList.remove('current');
+        if (link.getAttribute('href').substring(1) === currentSectionId) {
+            link.classList.add('current');
+        }
+    });
+
+    // update menu button
+    menuButtonLinks.forEach(link => {
         link.classList.remove('current');
         if (link.getAttribute('href').substring(1) === currentSectionId) {
             link.classList.add('current');
