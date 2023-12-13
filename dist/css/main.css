@@ -1,8 +1,53 @@
+@media screen and (min-width: 769px) and (max-width: 903px) {
+  body .start-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    transform: translate(10%, 2.5%); }
+  body .bio-image {
+    width: 50%;
+    margin-bottom: 2rem; }
+  body .start-text {
+    padding: 0 1rem; }
+  body .text-secondary {
+    display: block;
+    margin-top: 0.5rem; }
+  body .experiences-content {
+    grid-template-areas: 'education' 'work'; } }
+
 @media screen and (max-width: 768px) {
   body .menu-btn {
     display: block; }
   body #sidebar {
-    display: none; } }
+    display: none; }
+  body .start-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    transform: translate(2%, 2.5%); }
+  body .bio-image {
+    width: 50%;
+    margin-bottom: 2rem; }
+  body .start-text {
+    padding: 0 1rem; }
+  body .text-secondary {
+    display: block;
+    margin-top: 0.5rem; }
+  body .experiences-content {
+    grid-template-areas: 'education' 'work';
+    transform: translate(-22%); } }
 
 .menu-btn {
   display: none;
@@ -96,7 +141,8 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 20px;
   font-weight: 400;
-  line-height: 1.8em; }
+  line-height: 1.8em;
+  overflow-x: hidden; }
 
 #sidebar {
   position: fixed;
@@ -148,7 +194,7 @@ body {
   position: relative;
   z-index: 1; }
 
-#start::after, #about::after, #experiences::after, #skills::after, #hobbys::after {
+.background-dimmed::after {
   content: '';
   position: absolute;
   top: 0;
@@ -156,10 +202,15 @@ body {
   right: 0;
   bottom: 0;
   background: rgba(255, 255, 255, 0.5);
-  z-index: 0; }
+  z-index: -1; }
 
 #start {
-  background-image: url("../img/lake.JPG"); }
+  background-image: url("../img/lake.JPG");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: relative; }
 
 #about {
   background-image: url("../img/koli.jpeg"); }
@@ -174,19 +225,67 @@ body {
   background-image: url("../img/fire.jpeg"); }
 
 .start-content {
+  transform: translate(22%, -20%);
   display: grid;
-  gap: 30px;
-  grid-template-areas: 'bioimage heading starttext';
-  grid-template-columns: 1fr 2fr 3fr;
-  z-index: 1000000; }
+  grid-template-areas: 'bioimage starttext' 'bioimage starttext';
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+  text-align: center;
+  gap: 5px; }
   .start-content .bio-image {
     grid-area: bioimage;
-    max-width: 100%;
+    max-width: 60%;
     height: auto;
-    margin: auto;
+    border-radius: 5%;
     border: #338BA8 3px solid; }
-  .start-content .heading {
-    grid-area: heading;
-    text-align: left; }
   .start-content .start-text {
-    grid-area: starttext; }
+    grid-area: starttext;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 10rem;
+    color: #1f1e1e; }
+    .start-content .start-text .heading {
+      grid-area: heading;
+      margin: 0;
+      padding: 0;
+      font-size: 3rem;
+      font-weight: bold; }
+    .start-content .start-text .text {
+      margin-top: 2rem; }
+
+.text-secondary {
+  color: #338BA8; }
+
+#experiences {
+  /* Your existing styles */
+  display: flex;
+  justify-content: center;
+  /* This centers the content horizontally */
+  align-items: flex-start;
+  /* Aligns content to the top */
+  padding-left: 250px;
+  /* Adjust this value to match the width of your sidebar */
+  padding-top: 100px;
+  /* Provide some space from the top, adjust as needed */ }
+
+.experiences-content {
+  display: grid;
+  grid-template-areas: 'education work';
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  max-width: 80%;
+  transform: translate(-5%, 0);
+  color: #1f1e1e; }
+  .experiences-content .education-column {
+    grid-area: education; }
+  .experiences-content .work-column {
+    grid-area: work; }
+  .experiences-content .text-secondary {
+    font-size: 30px; }
+  .experiences-content .experience {
+    background: rgba(255, 255, 255, 0.3);
+    text-align: left;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: #338BA8 2px solid; }

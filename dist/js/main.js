@@ -3,14 +3,24 @@ function updateActiveLink() {
     const navLinks = document.querySelectorAll('#sidebar ul li a');
     const menuButtonLinks = document.querySelectorAll('.menu-nav .nav-item a');
 
-    let passedSections = Array.from(sections).map((section, index) => {
-        return {
-            y: section.getBoundingClientRect().top - section.offsetHeight * 0.5, 
-            id: sections[index].id
-        };
-    }).filter(section => section.y < 0);
+    let currentSectionId = 'start'; // Default to 'start' section
+    let currentSectionBottom = 0; // Track the bottom position of the current section
 
-    let currentSectionId = passedSections.length > 0 ? passedSections[passedSections.length - 1].id : 'start';
+    sections.forEach((section, index) => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const sectionBottom = sectionTop + section.offsetHeight;
+
+        // If the section is at least half shown at the top and not passed halfway at the bottom
+        if (sectionTop < (window.innerHeight / 2) && sectionBottom > (window.innerHeight / 2)) {
+            currentSectionId = section.id;
+            currentSectionBottom = sectionBottom; // Update the bottom position of the current section
+        }
+    });
+
+    // If we're at the bottom of the page, set the last section as active
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        currentSectionId = sections[sections.length - 1].id;
+    }
 
     // update sidebar
     navLinks.forEach(link => {
@@ -28,6 +38,7 @@ function updateActiveLink() {
         }
     });
 }
+
 
 window.addEventListener('scroll', updateActiveLink);
 window.addEventListener('DOMContentLoaded', updateActiveLink);

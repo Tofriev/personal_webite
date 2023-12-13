@@ -1,3 +1,44 @@
+@include mediaLg {
+
+    body{
+        .start-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 20px; 
+            width: 100%;
+            max-width: 600px; 
+            margin: 0 auto; 
+            transform: translate(10%, 2.5%)
+          }
+        
+          .bio-image {
+            width: 50%; 
+            margin-bottom: 2rem;
+          }
+    
+          .start-text {
+            padding: 0 1rem; 
+          }
+
+        .text-secondary{
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .experiences-content{
+            grid-template-areas: 
+            'education'
+            'work';
+        }
+
+    }
+
+}
+
+
 @include mediaMd {
     
     
@@ -8,10 +49,45 @@
         }
         
         
-        
         #sidebar {
             display: none;
         }
+
+        .start-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 20px; 
+            width: 100%;
+            max-width: 600px; 
+            margin: 0 auto; 
+            transform: translate(2%, 2.5%)
+          }
+        
+          .bio-image {
+            width: 50%; 
+            margin-bottom: 2rem;
+          }
+    
+          .start-text {
+            padding: 0 1rem; 
+          }
+
+        .text-secondary{
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .experiences-content{
+            grid-template-areas: 
+            'education'
+            'work';
+            transform: translate(-22%);
+        }
     }
 }
+
+
 

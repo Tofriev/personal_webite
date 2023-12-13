@@ -17,6 +17,7 @@ body {
     font-size: 20px;
     font-weight: 400;
     line-height: 1.8em;
+    overflow-x: hidden;
    
 }
 
@@ -85,20 +86,27 @@ body {
     z-index: 1;
 }
 
-#start::after, #about::after, #experiences::after, #skills::after, #hobbys::after {
+
+.background-dimmed::after {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(#fff,0.5);
-    z-index: 0;
+    background:rgba(#fff,0.5); 
+    z-index: -1; 
 }
+
 
 
 #start {
     background-image: url('../img/lake.JPG');
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh; 
+    position: relative;
     
 }
 
@@ -126,33 +134,89 @@ body {
 // start page 
 
 .start-content {
+    transform: translate(22%, -20%);
     display: grid;
-    gap: 30px;
     grid-template-areas: 
-    'bioimage heading starttext'
-    ;
-    grid-template-columns: 1fr 2fr 3fr;
-    z-index: 1000000;
+        'bioimage starttext'
+        'bioimage starttext';
+    grid-template-columns: repeat(3, 1fr); 
+    justify-items: center;
+    align-items: center; 
+    text-align: center; 
+    gap: 5px; 
 
     .bio-image {
         grid-area: bioimage;
-        max-width: 100%; 
-        height: auto; 
-        margin: auto;
-        //border-radius: 50%;
+        max-width: 60%;
+        height: auto;
+        border-radius: 5%;
         border: #338BA8 3px solid;
         
     }
 
-    .heading {
-        grid-area: heading;
-        text-align: left;
-        // Add any other styling you need for the heading
-    }
-
     .start-text {
         grid-area: starttext;
-        // Add any other styling you need for the start text
+        padding: 0;
+        margin: 0;
+        margin-bottom: 10rem;
+        color: $text-color;
+
+        .heading {
+            grid-area: heading;
+            margin: 0;
+            padding: 0;
+            font-size: 3rem;
+            font-weight: bold;
+             
+        }
+
+        .text{
+            margin-top: 2rem;
+        }
+        
     }
 }
+.text-secondary{
+    color:#338BA8
+}
+
+#experiences {
+    /* Your existing styles */
+    display: flex;
+    justify-content: center; /* This centers the content horizontally */
+    align-items: flex-start; /* Aligns content to the top */
+    padding-left: 250px; /* Adjust this value to match the width of your sidebar */
+    padding-top: 100px; /* Provide some space from the top, adjust as needed */
+}
+
+.experiences-content{
+    display: grid;
+    grid-template-areas: 
+    'education work';
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    max-width: 80%;
+    transform: translate(-5%, 0);
+    color: $text-color;
+
+
+    .education-column{
+        grid-area: education;
+    }
+
+    .work-column{
+        grid-area: work;
+    }
+    .text-secondary{
+        font-size: 30px;
+    }
+    .experience {
+        background: rgba(#fff, 0.3);
+        text-align: left;
+        padding: 0.5rem;
+        margin-bottom: 0.5rem;
+        border-bottom: $secondary-color  2px solid;
+    }
+}
+
 
