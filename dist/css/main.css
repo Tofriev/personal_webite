@@ -19,7 +19,10 @@
     display: block;
     margin-top: 0.5rem; }
   body .experiences-content {
-    grid-template-areas: 'education' 'work'; } }
+    grid-template-areas: 'education' 'work'; }
+  body .aboutcontent .heading {
+    display: block;
+    line-height: 3rem; } }
 
 @media screen and (max-width: 768px) {
   body .menu-btn {
@@ -47,7 +50,11 @@
     margin-top: 0.5rem; }
   body .experiences-content {
     grid-template-areas: 'education' 'work';
-    transform: translate(-22%); } }
+    transform: translate(-22%); }
+  body .aboutcontent .heading {
+    display: block;
+    line-height: 3rem;
+    max-width: 90%; } }
 
 .menu-btn {
   display: none;
@@ -258,16 +265,11 @@ body {
   color: #338BA8; }
 
 #experiences {
-  /* Your existing styles */
   display: flex;
   justify-content: center;
-  /* This centers the content horizontally */
   align-items: flex-start;
-  /* Aligns content to the top */
   padding-left: 250px;
-  /* Adjust this value to match the width of your sidebar */
-  padding-top: 100px;
-  /* Provide some space from the top, adjust as needed */ }
+  padding-top: 100px; }
 
 .experiences-content {
   display: grid;
@@ -289,3 +291,22 @@ body {
     padding: 0.5rem;
     margin-bottom: 0.5rem;
     border-bottom: #338BA8 2px solid; }
+
+#about {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+  #about .aboutcontent {
+    max-width: 60%;
+    transform: translate(7%, 0);
+    background: rgba(255, 255, 255, 0.3);
+    padding: 1rem;
+    border-bottom: #338BA8 2px solid; }
+    #about .aboutcontent .heading {
+      color: #338BA8;
+      font-size: 3rem;
+      font-weight: bold; }
+    #about .aboutcontent .text {
+      margin-top: 1rem;
+      color: #1f1e1e; }

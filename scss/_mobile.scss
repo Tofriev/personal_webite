@@ -34,6 +34,14 @@
             'work';
         }
 
+        .aboutcontent{
+          .heading{
+            display: block;
+            line-height: 3rem;
+          }
+          
+        }
+
     }
 
 }
@@ -85,6 +93,16 @@
             'education'
             'work';
             transform: translate(-22%);
+        }
+
+        .aboutcontent{
+          .heading{
+            display: block;
+            line-height: 3rem;
+            max-width: 90%;
+
+          }
+          
         }
     }
 }
