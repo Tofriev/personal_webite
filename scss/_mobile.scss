@@ -103,7 +103,11 @@
             grid-template-areas: 
             'education'
             'work';
-            transform: translate(15%);
+            max-width: 60%;
+            box-sizing: border-box;
+            padding: 0 15px;
+            justify-content: center;
+            transform: translate(12%,0);
         }
 
         .aboutcontent{

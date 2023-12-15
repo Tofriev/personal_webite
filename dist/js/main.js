@@ -3,26 +3,26 @@ function updateActiveLink() {
     const navLinks = document.querySelectorAll('#sidebar ul li a');
     const menuButtonLinks = document.querySelectorAll('.menu-nav .nav-item a');
 
-    let currentSectionId = 'start'; // Default to 'start' section
-    let currentSectionBottom = 0; // Track the bottom position of the current section
+    let currentSectionId = 'start'; 
+    let currentSectionBottom = 0; 
 
     sections.forEach((section, index) => {
         const sectionTop = section.getBoundingClientRect().top;
         const sectionBottom = sectionTop + section.offsetHeight;
 
-        // If the section is at least half shown at the top and not passed halfway at the bottom
+        
         if (sectionTop < (window.innerHeight / 2) && sectionBottom > (window.innerHeight / 2)) {
             currentSectionId = section.id;
-            currentSectionBottom = sectionBottom; // Update the bottom position of the current section
+            currentSectionBottom = sectionBottom; 
         }
     });
 
-    // If we're at the bottom of the page, set the last section as active
+  
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
         currentSectionId = sections[sections.length - 1].id;
     }
 
-    // update sidebar
+
     navLinks.forEach(link => {
         link.classList.remove('current');
         if (link.getAttribute('href').substring(1) === currentSectionId) {
@@ -30,7 +30,7 @@ function updateActiveLink() {
         }
     });
 
-    // update menu button
+
     menuButtonLinks.forEach(link => {
         link.classList.remove('current');
         if (link.getAttribute('href').substring(1) === currentSectionId) {

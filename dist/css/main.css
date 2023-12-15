@@ -57,7 +57,11 @@
     margin-top: 0.5rem; }
   body .experiences-content {
     grid-template-areas: 'education' 'work';
-    transform: translate(15%); }
+    max-width: 60%;
+    box-sizing: border-box;
+    padding: 0 15px;
+    justify-content: center;
+    transform: translate(12%, 0); }
   body .aboutcontent .heading {
     display: block;
     line-height: 3rem;
