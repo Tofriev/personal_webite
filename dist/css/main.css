@@ -19,10 +19,17 @@
     display: block;
     margin-top: 0.5rem; }
   body .experiences-content {
-    grid-template-areas: 'education' 'work'; }
+    grid-template-areas: 'education' 'work';
+    transform: translate(30%); }
   body .aboutcontent .heading {
     display: block;
-    line-height: 3rem; } }
+    line-height: 3rem; }
+  body .skill-list {
+    flex-direction: column;
+    align-items: center;
+    padding: 5rem; }
+    body .skill-list .skill-group {
+      min-width: 90%; } }
 
 @media screen and (max-width: 768px) {
   body .menu-btn {
@@ -50,11 +57,20 @@
     margin-top: 0.5rem; }
   body .experiences-content {
     grid-template-areas: 'education' 'work';
-    transform: translate(-22%); }
+    transform: translate(15%); }
   body .aboutcontent .heading {
     display: block;
     line-height: 3rem;
-    max-width: 90%; } }
+    max-width: 90%; }
+  body .hobbies-content {
+    line-height: 3rem; }
+  .skill-list {
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem; }
+    .skill-list .skill-group {
+      min-width: 90%;
+      transform: translate(-4%, 0); } }
 
 .menu-btn {
   display: none;
@@ -193,7 +209,7 @@ body {
   white-space: nowrap;
   font-size: 30px; }
 
-#start, #about, #experiences, #skills, #hobbys {
+#start, #about, #experiences, #skills, #hobbies {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -228,7 +244,7 @@ body {
 #skills {
   background-image: url("../img/ferry.jpeg"); }
 
-#hobbys {
+#hobbies {
   background-image: url("../img/fire.jpeg"); }
 
 .start-content {
@@ -251,7 +267,7 @@ body {
     padding: 0;
     margin: 0;
     margin-bottom: 10rem;
-    color: #1f1e1e; }
+    color: #454343; }
     .start-content .start-text .heading {
       grid-area: heading;
       margin: 0;
@@ -261,24 +277,32 @@ body {
     .start-content .start-text .text {
       margin-top: 2rem; }
 
+.cv-download {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 2rem;
+  background-color: #338BA8;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold; }
+
 .text-secondary {
   color: #338BA8; }
 
 #experiences {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  padding-left: 250px;
-  padding-top: 100px; }
+  align-items: flex-start; }
 
 .experiences-content {
   display: grid;
   grid-template-areas: 'education work';
   grid-template-columns: 1fr 1fr;
-  gap: 50px;
+  gap: 3rem;
   max-width: 80%;
-  transform: translate(-5%, 0);
-  color: #1f1e1e; }
+  transform: translate(7%, 0);
+  color: #454343; }
   .experiences-content .education-column {
     grid-area: education; }
   .experiences-content .work-column {
@@ -309,4 +333,61 @@ body {
       font-weight: bold; }
     #about .aboutcontent .text {
       margin-top: 1rem;
-      color: #1f1e1e; }
+      color: #454343; }
+
+#skills {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #454343; }
+  #skills .skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 80%;
+    transform: translate(6%, 0); }
+    #skills .skill-list .skill-group {
+      flex: 1 1 calc(50% - 10px);
+      list-style: none;
+      width: 50%;
+      box-sizing: border-box;
+      margin: 5px;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.3);
+      border-bottom: #338BA8 2px solid; }
+  #skills h3 {
+    color: #338BA8; }
+
+#hobbies {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+  #hobbies .hobbies-content {
+    max-width: 60%;
+    transform: translate(7%, 0);
+    background: rgba(255, 255, 255, 0.3);
+    padding: 1rem;
+    border-bottom: #338BA8 2px solid; }
+    #hobbies .hobbies-content .heading {
+      color: #454343;
+      font-size: 2.5rem;
+      font-weight: bold; }
+    #hobbies .hobbies-content .hobbies-list {
+      margin-top: 1rem;
+      color: #338BA8;
+      font-size: 2rem;
+      font-weight: bold;
+      list-style: none; }
+      #hobbies .hobbies-content .hobbies-list li {
+        margin-top: 3rem; }
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #ffffff;
+  background-color: #338BA8;
+  width: 100%;
+  margin-top: 0;
+  padding: 1px;
+  line-height: 1; }
