@@ -1,4 +1,6 @@
- In order to run the code, simply start a live server from the index.html
+Front End Project by Tobias Völkel
+
+In order to run the code, simply start a live server from the index.html
 
  Under this link you can find a video of the project running:
 
