@@ -1,6 +1,6 @@
-Front End Project by Tobias Völkel
+Currently undeployed perosnal website. This was my project for a course in front end development tought at LUT University, Finland.
 
-In order to run the code, simply start a live server from the index.html
+<img width="1404" alt="Bildschirmfoto 2024-07-26 um 16 56 07" src="https://github.com/user-attachments/assets/00151a88-06db-487b-8a41-3102b71abbf7">
 
  Under this link you can find a video of the project running:
 
